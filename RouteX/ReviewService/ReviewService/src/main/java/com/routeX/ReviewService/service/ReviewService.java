@@ -22,9 +22,9 @@ public class ReviewService implements CommandLineRunner {
         System.out.println("*******");
         Review r= Review.builder()
                 .content("amazing ride quality")
-                .createdAt(new Date())
-                .updatedAt(new Date())
+
                 .rating(5.0).build();
+
         System.out.println(r);
         reviewRepository.save(r);
     }

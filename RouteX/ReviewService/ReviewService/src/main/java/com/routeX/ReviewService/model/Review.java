@@ -13,12 +13,9 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EntityListeners(AuditingEntityListener.class)
 @Entity
-public class Review {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Review extends BaseModel{
+
 
     @Column(nullable = false)
     private String content;
@@ -28,24 +25,14 @@ public class Review {
 
 
 
-    @Column(nullable = false)
-    @CreatedDate
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
 
-    @Column(nullable = false)
-    @LastModifiedDate
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedAt;
 
     @Override
     public String toString() {
         return "Review{" +
-                "id=" + id +
+
                 ", content='" + content + '\'' +
                 ", rating=" + rating +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
                 '}';
     }
 
