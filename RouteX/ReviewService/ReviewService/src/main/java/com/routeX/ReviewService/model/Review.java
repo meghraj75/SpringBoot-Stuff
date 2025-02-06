@@ -15,7 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "bookingreview")
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Review extends BaseModel{
 
 
