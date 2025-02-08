@@ -20,15 +20,13 @@ public class Booking extends BaseModel{
     private Date startTime;
     @Temporal(TemporalType.TIMESTAMP)
     private Date endTime;
-
     private Long totDistance;
+
+    @ManyToOne  // many bookings can have a single driver.
+    private Driver driver;
+
+    @ManyToOne  //many bookings can be associated with a single passenger.
+    private Passenger passenger;
 }
 
 
-//Cascade Type	Description
-//PERSIST	Saves child entities when the parent is saved.
-//MERGE	Updates child entities when the parent is updated.
-//REMOVE	Deletes child entities when the parent is deleted.
-//REFRESH	Reloads child entities when the parent is refreshed.
-//DETACH	Detaches child entities when the parent is detached.
-//ALL	Applies all of the above operations.
