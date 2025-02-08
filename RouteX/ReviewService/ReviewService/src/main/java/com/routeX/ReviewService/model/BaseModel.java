@@ -14,7 +14,7 @@ import java.util.Date;
 @Setter
 public abstract class BaseModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
 
     @Column(nullable = false)
